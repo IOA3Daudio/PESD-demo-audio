@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESD音频样例试听</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f6f8fa; /* GitHub 风格背景灰 */
+            color: #24292e;
+        }
+
+        /* 每一块的容器 */
+        .audio-block {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .block-title {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaecef;
+            font-size: 1.5em;
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* 表头样式 (第一行和第一列) */
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+
+        /* 第一列宽度控制 */
+        th:first-child {
+            width: 100px;
+        }
+
+        /* 音频播放器样式 */
+        audio {
+            width: 100%;
+            min-width: 200px;
+            height: 40px;
+        }
+        
+        /* 简单的响应式调整 */
+        @media (max-width: 768px) {
+            audio { min-width: 150px; }
+            th, td { padding: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="audio-block">
+        <h2 class="block-title">生理参数</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="anthro/37-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="anthro/37-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="anthro/37-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="anthro/37-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="anthro/37-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="anthro/37-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="audio-block">
+        <h2 class="block-title">耳部照片</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="photo/55-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="photo/55-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="photo/55-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="photo/55-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="photo/55-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="photo/55-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="audio-block">
+        <h2 class="block-title">人体扫描</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="3D mesh/1-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="3D mesh/1-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="3D mesh/1-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="3D mesh/1-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="3D mesh/1-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="3D mesh/1-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="audio-block">
+        <h2 class="block-title">1阶稀疏采样</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="Upsample Q1/1-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q1/1-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q1/1-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q1/1-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="audio-block">
+        <h2 class="block-title">5阶稀疏采样</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="Upsample Q5/1-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q5/1-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q5/1-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q5/1-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="audio-block">
+        <h2 class="block-title">9阶稀疏采样</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>(方位角,俯仰角)</th> <th>MSE</th>
+                    <th>PESD</th>
+                    <th>参考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>(0°,0°)</th> <td><audio controls preload="none" src="Upsample Q9/1-0-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(30°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q9/1-30-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-30-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-30-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(330°,0°)</th>
+                    <td><audio controls preload="none" src="Upsample Q9/1-330-0-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-330-0-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-330-0-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0-30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0-30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0-30-true.wav"></audio></td>
+                </tr>
+                <tr>
+                    <th>(0°,-30°)</th>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0--30-mse-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0--30-pesd-pred.wav"></audio></td>
+                    <td><audio controls preload="none" src="Upsample Q9/1-0--30-true.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        // 这是一个可选的脚本：
+        // 功能：当播放一个音频时，自动暂停其他正在播放的音频，防止声音重叠。
+        document.addEventListener('play', function(e){
+            var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                if(audios[i] != e.target){
+                    audios[i].pause();
+                }
+            }
+        }, true);
+    </script>
+</body>
+</html>
